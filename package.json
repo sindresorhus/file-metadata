@@ -1,0 +1,38 @@
+{
+	"name": "file-metadata",
+	"version": "0.0.0",
+	"description": "Get file metadata using `mdls` on macOS",
+	"license": "MIT",
+	"repository": "sindresorhus/file-metadata",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"file",
+		"metadata",
+		"mdls",
+		"macos",
+		"mac",
+		"spotlight",
+		"attributes",
+		"filepath"
+	],
+	"dependencies": {
+		"plist": "^2.1.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
+}
