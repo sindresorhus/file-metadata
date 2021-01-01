@@ -1,4 +1,4 @@
-# file-metadata [![Build Status](https://travis-ci.org/sindresorhus/file-metadata.svg?branch=master)](https://travis-ci.org/sindresorhus/file-metadata)
+# file-metadata
 
 > Get file metadata using [`mdls`](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/mdls.1.html) on macOS
 
