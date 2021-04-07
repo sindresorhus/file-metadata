@@ -1,37 +1,28 @@
-'use strict';
-const util = require('util');
-const childProcess = require('child_process');
-const plist = require('plist');
+import {promisify} from 'util';
+import childProcess from 'child_process';
+import plist from 'plist';
 
-const execFileP = util.promisify(childProcess.execFile);
+const execFileP = promisify(childProcess.execFile);
 
 const parse = data => {
 	const object = plist.parse(data);
-	const ret = {};
+	const returnValue = {};
 
-	for (let key of Object.keys(object)) {
-		const value = object[key];
-
+	for (let [key, value] of Object.entries(object)) {
 		key = key.replace(/^kMDItem/, '').replace(/_/g, '');
-
-		if (key.startsWith('FS')) {
-			key = key.replace(/^FS/, 'fs');
-		} else {
-			key = key[0].toLowerCase() + key.slice(1);
-		}
-
-		ret[key] = value;
+		key = key.startsWith('FS') ? key.replace(/^FS/, 'fs') : key[0].toLowerCase() + key.slice(1);
+		returnValue[key] = value;
 	}
 
-	return ret;
+	return returnValue;
 };
 
-module.exports = async filePath => {
+export async function fileMetadataAsync(filePath) {
 	const {stdout} = await execFileP('mdls', ['-plist', '-', filePath]);
 	return parse(stdout.trim());
-};
+}
 
-module.exports.sync = filePath => {
+export function fileMetadataSync(filePath) {
 	const stdout = childProcess.execFileSync('mdls', ['-plist', '-', filePath], {encoding: 'utf8'});
 	return parse(stdout.trim());
-};
+}

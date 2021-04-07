@@ -4,13 +4,16 @@
 	"description": "Get file metadata using `mdls` on macOS",
 	"license": "MIT",
 	"repository": "sindresorhus/file-metadata",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
 	"engines": {
-		"node": ">=8"
+		"node": ">=12"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -29,10 +32,10 @@
 		"filepath"
 	],
 	"dependencies": {
-		"plist": "^2.1.0"
+		"plist": "^3.0.2"
 	},
 	"devDependencies": {
-		"ava": "*",
-		"xo": "*"
+		"ava": "^3.15.0",
+		"xo": "^0.38.2"
 	}
 }

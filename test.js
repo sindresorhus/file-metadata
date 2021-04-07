@@ -1,13 +1,13 @@
 import test from 'ava';
-import m from '.';
+import {fileMetadataAsync, fileMetadataSync} from './index.js';
 
 test('async', async t => {
-	const result = await m('index.js');
+	const result = await fileMetadataAsync('index.js');
 	t.is(result.contentType, 'com.netscape.javascript-source');
 	t.is(result.fsName, 'index.js');
 });
 
 test('sync', t => {
-	const result = m.sync('index.js');
+	const result = fileMetadataSync('index.js');
 	t.is(result.contentType, 'com.netscape.javascript-source');
 });
