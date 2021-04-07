@@ -11,9 +11,9 @@ $ npm install file-metadata
 ## Usage
 
 ```js
-import fileMetadata from 'file-metadata';
+import {fileMetadataAsync} from 'file-metadata';
 
-console.log(await fileMetadata('index.js'));
+console.log(await fileMetadataAsync('index.js'));
 /*
 {
 	contentCreationDate: 2016-10-25T18:25:46.000Z,
