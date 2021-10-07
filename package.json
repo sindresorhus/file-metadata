@@ -1,6 +1,6 @@
 {
 	"name": "file-metadata",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "Get file metadata using `mdls` on macOS",
 	"license": "MIT",
 	"repository": "sindresorhus/file-metadata",
