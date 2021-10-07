@@ -1,5 +1,5 @@
-import {promisify} from 'util';
-import childProcess from 'child_process';
+import {promisify} from 'node:util';
+import childProcess from 'node:child_process';
 import plist from 'plist';
 
 const execFileP = promisify(childProcess.execFile);
@@ -17,7 +17,7 @@ const parse = data => {
 	return returnValue;
 };
 
-export async function fileMetadataAsync(filePath) {
+export async function fileMetadata(filePath) {
 	const {stdout} = await execFileP('mdls', ['-plist', '-', filePath]);
 	return parse(stdout.trim());
 }

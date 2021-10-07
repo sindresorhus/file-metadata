@@ -13,7 +13,7 @@
 	"type": "module",
 	"exports": "./index.js",
 	"engines": {
-		"node": ">=12"
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -32,10 +32,10 @@
 		"filepath"
 	],
 	"dependencies": {
-		"plist": "^3.0.2"
+		"plist": "^3.0.4"
 	},
 	"devDependencies": {
 		"ava": "^3.15.0",
-		"xo": "^0.38.2"
+		"xo": "^0.45.0"
 	}
 }

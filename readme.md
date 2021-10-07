@@ -4,16 +4,16 @@
 
 ## Install
 
-```
-$ npm install file-metadata
+```sh
+npm install file-metadata
 ```
 
 ## Usage
 
 ```js
-import {fileMetadataAsync} from 'file-metadata';
+import {fileMetadata} from 'file-metadata';
 
-console.log(await fileMetadataAsync('index.js'));
+console.log(await fileMetadata('index.js'));
 /*
 {
 	contentCreationDate: 2016-10-25T18:25:46.000Z,
@@ -63,7 +63,7 @@ console.log(await fileMetadataAsync('index.js'));
 
 ## API
 
-### fileMetadataAsync(filePath)
+### fileMetadata(filePath)
 
 Returns a `Promise<object>` with the properties seen in the above example.
 
