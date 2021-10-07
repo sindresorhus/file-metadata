@@ -23,6 +23,10 @@ export async function fileMetadataAsync(filePath) {
 }
 
 export function fileMetadataSync(filePath) {
-	const stdout = childProcess.execFileSync('mdls', ['-plist', '-', filePath], {encoding: 'utf8'});
+	const stdout = childProcess.execFileSync('mdls', ['-plist', '-', filePath], {
+		encoding: 'utf8',
+		stdio: ['ignore', 'pipe', 'ignore'],
+	});
+
 	return parse(stdout.trim());
 }
